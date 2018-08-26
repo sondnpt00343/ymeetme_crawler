@@ -1,0 +1,17 @@
+version: '3'
+services:
+  selenium:
+      build:
+        context: .
+        dockerfile: ./docker/Dockerfile
+      environment:
+
+        # database
+        - DB_HOST=125.212.239.16
+        - DB_USERNAME=root
+        - DB_PASSWORD=YMeetMe@2K18!~
+        - DB_PORT=23306
+        - DB_NAME=ymeetme_production
+
+      command: bash -c "python3 start.py -p 29"
+      privileged: true
